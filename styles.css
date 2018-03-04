@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background-color: lightgray;
 }
 
 h1 {
@@ -29,6 +30,7 @@ table {
 
 tr {
     height: 20px;
+    background-color: lightblue;
 }
 
 td {

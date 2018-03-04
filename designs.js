@@ -3,15 +3,32 @@
 
 // When size is submitted by the user, call makeGrid()
 
+
+// all the fun stuff
+// sets event listeners
+// draws the grid
+// redraws the grid fresh if the user gives us new dimensions
+
 $(function () {
+    // sets the grid
     $("#sizePicker").on("submit", function (event) {
         removeGrid(); // start fresh
         makeGrid(); // draw new grid based on user input
         event.preventDefault();
-    }); 
-    
-});
+            // picks the highlighted cell and sets the color
+        $("td").on("click", function() {
+            console.log("I've been clicked!");
+            $(this).css("background-color", getColor());
+        });
 
+        // removes on double click
+        $("td").on("dblclick", function() {
+            console.log("I've been double-clicked!");
+            $(this).css("background-color", "");
+        });
+    }); 
+
+});
 
 
 function makeGrid() {
@@ -45,7 +62,10 @@ function removeGrid() {
     
 }
 
-function funColors() {
+function getColor() {
     //variables
-    
-}
+    var selectColor, currentColor, gridCell;
+    selectColor = $("#colorPicker");
+    currentColor = selectColor.val();
+    return currentColor;
+};

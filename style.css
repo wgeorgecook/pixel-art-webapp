@@ -1,0 +1,75 @@
+body {
+    text-align: center;
+    background-color: lightblue;
+    color: salmon;
+
+}
+
+
+h1 {
+    font-family: roboto;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 70px;
+    margin: 0.2em;
+}
+/*
+.theBody {
+    column-count: 2; 
+    column-gap: 40px;
+    column-rule: 4px double salmon;
+}
+*/
+
+#left {
+    float: left;
+    margin-left: 15%;
+}
+
+#right {
+    float: right;
+    margin-right: 5%;
+}
+h2 {
+    margin: 1em 0 0.25em;
+}
+
+.lighter {
+    color:lightsalmon;
+}
+
+h2:first-of-type {
+    margin-top: 0.5em;
+}
+
+table,
+tr,
+td {
+    border: 1px solid black;
+}
+
+.spacing {
+
+    margin: 1em 0 0.25em;
+    float: right;
+
+}
+table {
+
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 6px 7px 14px 1px rgba(0,0,0,0.22);
+}
+
+tr {
+    height: 20px;
+    background-color: lightsalmon;
+}
+
+td {
+    width: 20px;
+}
+
+input[type=number] {
+    width: 6em;
+}
+

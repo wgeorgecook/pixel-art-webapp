@@ -9,7 +9,6 @@ body {
 
 h1 {
     font: 400 100px/1.5 'Pacifico', Helvetica, sans-serif;
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
     font-size: 70px;
     margin: 0.2em;
     box-shadow: 6px 7px 14px 1px rgba(0,0,0,0.22); 
@@ -19,22 +18,12 @@ h1 {
 }
 
 .theBody {
-    margin: auto;
+    margin: 1em;
     box-shadow: 6px 7px 14px 1px rgba(0,0,0,0.22);
     background-color: lightblue;
 }
 
-/* 
-#left {
-    float: left;
-    margin-left: 15%;
-}
 
-#right {
-    float: right;
-    margin-right: 15%;
-}
-*/ 
 h2 {
     margin: 1em 0 0.25em;
 }
@@ -42,9 +31,20 @@ h2 {
 .lighter {
     color:lightsalmon;
 }
+.button {
+    background-color: lightsalmon;
+    color: lightcyan;
+    box-shadow: 5px 2px 7px 1px rgba(0,0,0,0.22);
+}
 
+.inputBox {
+    color: salmon;
+}
 h2:first-of-type {
     margin-top: 0.5em;
+}
+.picker {
+    margin-bottom: 1em;
 }
 
 table,
@@ -78,4 +78,3 @@ td {
 input[type=number] {
     width: 6em;
 }
-

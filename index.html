@@ -6,25 +6,26 @@
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    
 </head>
 <body>
 
     <h1>Pixel Art Maker</h1>
   
         <div id="left" class="theBody">
-            <h2>First step: Let's make a grid</h2>
-            <h2 class="lighter">This is the basis for your new creations.</h2>
+            <h2>Let's get to building! Input dimensions and I'll make your grid.</h2>
+            <h2 class="lighter">This is your canvas. It can be as big or small as you need.</h2>
             <form id="sizePicker">
                 Grid Height:
-                <input type="number" id="inputHeight" name="height" min="1" value="10">
+                <input type="number" id="inputHeight" name="height" min="1" value="10" class="inputBox">
                 Grid Width:
-                <input type="number" id="inputWeight" name="width" min="1" value="10">
-                <input type="submit" value="Build that grid!">
+                <input type="number" id="inputWeight" name="width" min="1" value="10" class="inputBox">
+                <input type="submit" value="Build that grid!" class="button">
             </form>
     
 
             <h2>Pick a color, any color!</h2>
-            <input type="color" id="colorPicker" value="#ff6666">
+            <input type="color" id="colorPicker" value="#ff6666" class="picker">
             
         </div>
         <div id="right" class="theBody">

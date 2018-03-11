@@ -72,7 +72,7 @@ function getBgColorHex(elem){
     Courtesey shaik from 
     https://stackoverflow.com/questions/1740700/how-to-get-hex-color-value-rather-than-rgb-value
     */
-    var color = elem.css('background-color')
+    var color = $(elem).css('background-color')
     var hex;
     if(color.indexOf('#')>-1){
         //for IE
@@ -92,14 +92,15 @@ function setColor() {
     mouseDown = false;
 
     // picks the highlighted cell and sets the color
+    // removes the color if already set
     $("td").on("click", function() {
-        $(this).css("background-color", getColor());   
+        if ( getColor() != getBgColorHex(this) ) {
+            $(this).css("background-color", getColor());   
+        } else {
+            $(this).css("background-color", "");  
+        };  
     });
-        
-    // removes on double click
-    $("td").on("dblclick", function() {
-        $(this).css("background-color", "");
-    });
+
 
     // determine if dragging
     $("td").on("mousedown", function() {

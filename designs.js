@@ -1,52 +1,18 @@
-// Select color input
-// Select size input
-
-// When size is submitted by the user, call makeGrid()
-
-
-// all the fun stuff
-// sets event listeners
-// draws the grid
-// redraws the grid fresh if the user gives us new dimensions
+// On submitting a grid size will 
+// 0. remove any old grid
+// 1. draw the grid
+// 2. set the color of a grid cell based on behavior
 
 $(function () {
     // sets the grid
     $("#sizePicker").on("submit", function (event) {
         // removeGrid(); // start fresh
-        whileRemoveGrid(); // start fresh with a while grid
+        whileRemoveGrid(); // start fresh with a while loop
         makeGrid(); // draw new grid based on user input
+        setColor(); // sets the color of grid cell based on behavior
         event.preventDefault();
-
-        // picks the highlighted cell and sets the color
-        $("td").on("click", function() {
-            console.log("I've been clicked!");
-            $(this).css("background-color", getColor());
-
-            /*
-
-            // can remove an instruction by comparing values. Would require a single click each time.
-            if ( getBgColorHex($this) === $("#colorPicker").val() ) {
-                console.log("Same color. Reset to default.");
-                $(this).css("background-color", "");
-            }
-            } else {
-                console.log("New color. Set new value.");
-                $(this).css("background-color", getColor());
-            };
-
-            */
-        });
-            
-
-        // removes on double click
-        $("td").on("dblclick", function() {
-            console.log("I've been double-clicked!");
-            $(this).css("background-color", "");
-       });
-    }); 
-
+    });
 });
-
 
 function makeGrid() {
 
@@ -75,9 +41,8 @@ function removeGrid() {
     // removes the grid for when size changes
     var grid;
     grid = $("table");
-    grid.empty();
-    
-}
+    grid.empty();   
+};
 
 function whileRemoveGrid() {
     // Critera asks for a while loop
@@ -90,6 +55,8 @@ function whileRemoveGrid() {
         t --;
     };
 };
+
+
 function getColor() {
     //variables
     var selectColor, currentColor, gridCell;
@@ -113,6 +80,40 @@ function getBgColorHex(elem){
     } else {
         var rgb = color.match(/\d+/g);
         hex = '#'+ ('0' + parseInt(rgb[0], 10).toString(16)).slice(-2) + ('0' + parseInt(rgb[1], 10).toString(16)).slice(-2) + ('0' + parseInt(rgb[2], 10).toString(16)).slice(-2);
-    }
+    };
     return hex;
-}
+};
+   
+
+
+function setColor() {
+
+    var mouseDown;
+    mouseDown = false;
+
+    // picks the highlighted cell and sets the color
+    $("td").on("click", function() {
+        $(this).css("background-color", getColor());   
+    });
+        
+    // removes on double click
+    $("td").on("dblclick", function() {
+        $(this).css("background-color", "");
+    });
+
+    // determine if dragging
+    $("td").on("mousedown", function() {
+        mouseDown = true;
+    });  
+
+    $("td").on("mouseup", function() {
+        mouseDown = false;
+    });   
+
+    // drag color along grid
+    $("td").on("mousemove", function() {
+        if (mouseDown === true) {
+            $(this).css("background-color", getColor() );
+        };
+    }); 
+}; 

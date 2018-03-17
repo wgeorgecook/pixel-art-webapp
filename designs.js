@@ -141,7 +141,7 @@ function savePixelArt() {
             var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d");
             // draw to canvas...
             canvas.toBlob(function(blob) {
-                saveAs(blob, "pixelArt.png");
+                saveAs(blob, "pixelArt.jpg");
             });
         }
     });

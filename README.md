@@ -1,16 +1,9 @@
 # Pixel Art Maker Project
 
-## Table of Contents
+## Welcome to my Grow With Google final project! 
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
-
-## Instructions
-
-To get started, open `designs.js` and start building out the app's functionality.
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+#### I learned a lot while creating this space:
+    * Creating and styling HTML pages
+        * I followed along using [Google's Material Design Priciples](https://material.io/guidelines/)
+    * Using Javascript functions and jQuery to dynamically change the DOM
+    * Integrating external Javascript libraries into my code 

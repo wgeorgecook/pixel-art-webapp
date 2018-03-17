@@ -18,6 +18,9 @@ $(function () {
         savePixelArt();
     });
 
+    $("#share").on("click", function (event) {
+        shareToFacebook();
+    });
 });
 
 function makeGrid() {

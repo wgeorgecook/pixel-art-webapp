@@ -40,6 +40,9 @@ h2 {
 #save {
     visibility: hidden;
 }
+#share {
+    visibility: hidden;
+}
 
 .inputBox {
     color: salmon;

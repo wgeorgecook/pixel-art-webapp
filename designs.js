@@ -146,5 +146,6 @@ function savePixelArt() {
 function shareToFacebook() {
     FB.ui({
         method: 'share',
+        href: ''
       }, function(response){});
 }

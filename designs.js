@@ -146,6 +146,6 @@ function savePixelArt() {
 function shareToFacebook() {
     FB.ui({
         method: 'share',
-        href: ''
+        href: 'https://wgeorgecook.forge.io',
       }, function(response){});
 }

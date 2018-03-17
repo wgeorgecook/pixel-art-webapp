@@ -142,3 +142,10 @@ function savePixelArt() {
         }
     });
 };
+
+function shareToFacebook() {
+    FB.ui({
+        method: 'share',
+        href: 'https://wgeorgecook.getforge.io',
+      }, function(response){});
+}

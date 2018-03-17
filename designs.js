@@ -12,6 +12,7 @@ $(function () {
         setColor(); // sets the color of grid cell based on behavior
         event.preventDefault();
         document.getElementById("save").style.visibility = "visible";
+        document.getElementById("share").style.visibility = "visible";
     });
 
     $("#save").on("click", function (event) {
@@ -149,6 +150,6 @@ function savePixelArt() {
 function shareToFacebook() {
     FB.ui({
         method: 'share',
-        href: 'https://wgeorgecook.forge.io',
+        href: 'https://wgeorgecook.github.io/pixel-art-webapp/',
       }, function(response){});
 }

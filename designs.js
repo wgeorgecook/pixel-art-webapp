@@ -11,14 +11,20 @@ $(function () {
         makeGrid(); // draw new grid based on user input
         setColor(); // sets the color of grid cell based on behavior
         event.preventDefault();
+        document.getElementById("save").style.visibility = "visible";
     });
+
+    $("#save").on("click", function (event) {
+        savePixelArt();
+    });
+
 });
 
 function makeGrid() {
 
     // variables set the values equal to the user input
-    var width, height, canvas;
-    canvas = $("table");
+    var width, height, table;
+    table = $("table");
     width = $("#sizePicker input#inputWeight").val();
     height = $("#sizePicker input#inputHeight").val();
 
@@ -28,7 +34,7 @@ function makeGrid() {
 
     // set rows
     for (c = 0; c < height; c++) {
-        canvas.append("<tr/>");
+        table.append("<tr/>");
         //set columns
     }; for (r = 0; r < width; r++) {
         $("tr").append("<td/>");
@@ -118,3 +124,21 @@ function setColor() {
         };
     }); 
 }; 
+
+
+function savePixelArt() {
+    // will render the grid and allow user to save
+
+    html2canvas(document.getElementById('pixelCanvas'), {
+        onrendered: function(canvas) {
+            //window.saveAs(canvas.toDataURL('image/jpeg'));
+            document.body.appendChild(canvas).setAttribute("id", "canvas"),
+            document.getElementById("canvas").style.visibility = "hidden"; 
+            var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d");
+            // draw to canvas...
+            canvas.toBlob(function(blob) {
+                saveAs(blob, "pixelArt.png");
+            });
+        }
+    });
+};

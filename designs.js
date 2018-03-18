@@ -135,15 +135,18 @@ function savePixelArt() {
 
     html2canvas(document.getElementById('pixelCanvas'), {
         onrendered: function(canvas) {
+            var imgURL, canvas;
             //window.saveAs(canvas.toDataURL('image/jpeg'));
             document.body.appendChild(canvas).setAttribute("id", "canvas"),
             document.getElementById("canvas").style.visibility = "hidden"; 
             var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d");
             // draw to canvas...
-            canvas.toDataURL("image/jpg");
             canvas.toBlob(function(blob) {
                 saveAs(blob, "pixelArt.jpg");
+            
             });
+            imgURL = canvas.toDataURL("image/jpg");
+            return imgURL;
         }
     });
 };

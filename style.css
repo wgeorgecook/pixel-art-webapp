@@ -44,6 +44,12 @@ h2 {
     visibility: hidden;
 }
 
+#github {
+    margin: 1em;
+    box-shadow: 6px 7px 14px 1px rgba(0,0,0,0.22);
+    background-color: lightblue;
+}
+
 .inputBox {
     color: salmon;
 }

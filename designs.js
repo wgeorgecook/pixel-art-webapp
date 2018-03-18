@@ -140,6 +140,7 @@ function savePixelArt() {
             document.getElementById("canvas").style.visibility = "hidden"; 
             var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d");
             // draw to canvas...
+            canvas.toDataURL("image/jpg");
             canvas.toBlob(function(blob) {
                 saveAs(blob, "pixelArt.jpg");
             });

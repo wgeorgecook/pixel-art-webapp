@@ -141,7 +141,7 @@ function createCanvas() {
     html2canvas(document.getElementById('pixelCanvas'), {
         onrendered: function(canvas) {
             document.body.appendChild(canvas).setAttribute("id", "canvas"),
-            document.getElementById("canvas").style.visibility = "visible";
+            document.getElementById("canvas").style.visibility = "hidden";
         }
     });
 };

@@ -141,7 +141,7 @@ function createCanvas() {
     html2canvas(document.getElementById('pixelCanvas'), {
         onrendered: function(canvas) {
             document.body.appendChild(canvas).setAttribute("id", "canvas"),
-            document.getElementById("canvas").style.visibility = "hidden";
+            document.getElementById("canvas").style.visibility = "visible";
         }
     });
 };
@@ -160,10 +160,24 @@ function savePixelArt() {
 };
 
 function updateOGImgTag() {
+    /*
     var canvas, tagUpdate, imageTag;
     canvas = document.getElementById("canvas");
     tagUpdate = canvas.toDataURL('image/jpeg');
     $("meta[property='og:image']").attr("content", tagUpdate);
+    */
+   createCanvas();
+   setTimeout( function() {
+    var canvas = document.getElementById("canvas");
+    var photo = canvas.toDataURL('image/jpeg');                
+     $.ajax({
+        method: 'POST',
+        url: 'photo_upload.php',
+        data: {
+            photo: photo
+        }
+     });
+   }, 1500);
 }
 
 function shareToFacebook() {

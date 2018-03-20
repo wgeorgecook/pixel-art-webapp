@@ -129,31 +129,52 @@ function setColor() {
     }); 
 }; 
 
-
-function savePixelArt() {
+function createCanvas() {
+    /*
+    // clear any previous canvas to prevent duplicates 
+    if (document.getElementById("canvas")) {
+        console.log("Canvas present. Removing.");
+        $("canvas").remove();
+    };
+    */
     // will render the grid and allow user to save
-
     html2canvas(document.getElementById('pixelCanvas'), {
         onrendered: function(canvas) {
-            var imgURL, canvas;
-            //window.saveAs(canvas.toDataURL('image/jpeg'));
             document.body.appendChild(canvas).setAttribute("id", "canvas"),
-            document.getElementById("canvas").style.visibility = "hidden"; 
-            var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d");
-            // draw to canvas...
-            canvas.toBlob(function(blob) {
-                saveAs(blob, "pixelArt.jpg");
-            
-            });
-            imgURL = canvas.toDataURL("image/jpg");
-            return imgURL;
+            document.getElementById("canvas").style.visibility = "hidden";
         }
     });
 };
 
+function savePixelArt() {
+    createCanvas();
+    setTimeout(function () { 
+        var canvas = document.getElementById("canvas"), ctx = canvas.getContext("2d");
+        // draw to canvas...
+        canvas.toBlob(function(blob) {
+            saveAs(blob, "pixelArt.jpg");
+        });
+        // remove rendered canvas to prevent duplicates
+        $("canvas").remove();
+    }, 1000);
+};
+
+function updateOGImgTag() {
+    var canvas, tagUpdate, imageTag;
+    canvas = document.getElementById("canvas");
+    tagUpdate = canvas.toDataURL('image/jpeg');
+    $("meta[property='og:image']").attr("content", tagUpdate);
+}
+
 function shareToFacebook() {
-    FB.ui({
-        method: 'share',
-        href: 'https://wgeorgecook.github.io/pixel-art-webapp/',
-      }, function(response){});
+    createCanvas();
+    setTimeout(function() {
+        updateOGImgTag();
+        FB.ui({
+            method: 'share',
+            href: 'https://wgeorgecook.github.io/pixel-art-webapp/',
+          }, function(response){});
+        // remove rendered canvas to prevent duplicates
+        $("canvas").remove();
+    }, 1000);
 }

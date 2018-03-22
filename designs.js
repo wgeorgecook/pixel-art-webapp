@@ -20,7 +20,7 @@ $(function () {
     });
 
     $("#share").on("click", function (event) {
-        shareToFacebook();
+        openGraphShare();
     });
 });
 

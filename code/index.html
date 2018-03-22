@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel Art Maker!</title>
+    <!-- Fonts and style sheets -->
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+   
+    <!-- Javascript libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/FileSaver.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.14.0/js/canvas-to-blob.min.js"></script>
+    
+    <!-- Facebook meta tags -->
+    <meta property="og:url" content="https://wgeorgecook.github.io/pixel-art-webapp/" />
+    <meta property="og:title" content="Pixel Art Maker" />
+    <meta property="og:description" content="A place for art makers!" />
+    <meta property="og:type" content="website" />
+    <!-- <meta property="og:image" content="https://raw.githubusercontent.com/wgeorgecook/pixel-art-webapp/master/smiley.jpg" /> -->
+    <meta property="og:image" content="filler content" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:width" content="200" />
+    <meta property="fb:app_id" content="306306066563093" />
+
+    <!-- Facebook share script -->
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : '306306066563093',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.12'
+          });
+        };
+
+       // FB.AppEvents.logPageView(); 
+        
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+      </script>
+
+</head>
+<body>
+
+    <h1>Pixel Art Maker</h1>
+  
+        <div id="left" class="theBody">
+            <h2>Let's get to building! Input dimensions and I'll make your grid.</h2>
+            <h2 class="lighter">This is your canvas. It can be as big or small as you need.</h2>
+            <form id="sizePicker">
+                Grid Height:
+                <input type="number" id="inputHeight" name="height" min="1" value="10" class="inputBox">
+                Grid Width:
+                <input type="number" id="inputWeight" name="width" min="1" value="10" class="inputBox">
+                <input type="submit" value="Build that grid!" class="button">
+            </form>
+    
+
+            <h2>Pick a color, any color!</h2>
+            <input type="color" id="colorPicker" value="#ff6666" class="picker">
+            
+        </div>
+        <div id="right" class="theBody">
+            <h2>Get creative! Your pixel artwork goes here.</h2>
+
+            <table id="pixelCanvas"></table>
+
+            <h4>
+                Click to set or remove cell color. Click and drag to set multiple cells at once!
+            </h4>
+            <input type="submit" value="Save your art!" class="button" id="save">  
+            <input type="submit" value="Share to facebook" class="button" id="share"> 
+            
+        </div>
+ 
+        <div id="github">
+            <h4>See full functionality at my <a href="https://wgeorgecook.github.io/pixel-art-webapp/">Github!</a></h4>
+        </div>
+        <canvas class="my-canvas">
+        </canvas>
+            
+    <script src="designs.js"></script>
+    
+</body>
+</html>

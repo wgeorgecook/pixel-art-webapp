@@ -188,10 +188,10 @@ function openGraphShare() {
         photo = canvas.toDataURL('image/jpeg');   
         FB.ui({
             method: 'share_open_graph',
-            action_type: 'share',
+            action_type: 'pixelArtMaker:share',
             action_properties: JSON.stringify({
               'website': {
-                 object: 'https://wgeorgecook.github.io/pixel-art-webapp/',
+                 pixelArtMaker: 'https://wgeorgecook.github.io/pixel-art-webapp/',
                  'og:type': 'website',
                  'og:url': 'https://wgeorgecook.github.io/pixel-art-webapp/',
                  'og:title': 'Pixel Art Maker',

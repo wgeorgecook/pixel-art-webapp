@@ -190,8 +190,8 @@ function openGraphShare() {
             method: 'share_open_graph',
             action_type: 'pixelArtMaker:share',
             action_properties: JSON.stringify({
+              object: 'https://wgeorgecook.github.io/pixel-art-webapp/',
               'website': {
-                 pixelArtMaker: 'https://wgeorgecook.github.io/pixel-art-webapp/',
                  'og:type': 'website',
                  'og:url': 'https://wgeorgecook.github.io/pixel-art-webapp/',
                  'og:title': 'Pixel Art Maker',

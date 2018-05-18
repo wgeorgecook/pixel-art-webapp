@@ -66,9 +66,8 @@ function whileRemoveGrid() {
 
 function getColor() {
     //variables
-    var selectColor, currentColor, gridCell;
-    selectColor = $("#colorPicker");
-    currentColor = selectColor.val();
+    let selectColor = document.getElementById("colorPicker");
+    let currentColor = selectColor.value;
     return currentColor;
 };
 

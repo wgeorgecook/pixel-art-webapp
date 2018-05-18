@@ -51,22 +51,15 @@ function makeGrid() {
     };
 };
 
-function removeGrid() {
-    // removes the grid for when size changes
-    var grid;
-    grid = $("table");
-    grid.empty();   
-};
 
 function whileRemoveGrid() {
-    // Critera asks for a while loop
-    // so here it is
-    var grid, t;
-    grid = $("table");
-    t = grid.children().length;
-    while (t > 0) {
-        grid.children().first().remove();
-        t --;
+    // removes the grid for when size changes
+    let grid = document.querySelector("table");
+    let tbody = document.getElementsByTagName('tbody');
+    if (grid.childElementCount) {
+        while (i = grid.childElementCount, i >= 0, i --) {
+            tbody[i].remove();
+        };
     };
 };
 

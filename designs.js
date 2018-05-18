@@ -3,7 +3,7 @@
 // 1. draw the grid
 // 2. set the color of a grid cell based on behavior
 
-$(function () {
+document.addEventListener('DOMContentLoaded', function () {
     // sets the grid
     const sizePicker = document.getElementById('sizePicker');
     sizePicker.addEventListener("submit", function (event) {
@@ -32,7 +32,7 @@ function makeGrid() {
     // variables set the values equal to the user input
     
     const table = document.querySelector("table");
-    const width = document.getElementById("inputWeight").value;
+    const width = document.getElementById("inputWidth").value;
     const height = document.getElementById("inputHeight").value;
 
 

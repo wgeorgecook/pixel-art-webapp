@@ -15,15 +15,16 @@ $(function () {
         document.getElementById("share").style.visibility = "visible";
     });
 
-    const save = document.getElementById;
+    const save = document.getElementById("save");
     save.addEventListener("click", function() {
         savePixelArt();
     });
 
-
-    $("#share").on("click", function (event) {
+    const share = document.getElementById("share");
+    share.addEventListener("click", function() {
         openGraphShare();
     });
+
 });
 
 function makeGrid() {

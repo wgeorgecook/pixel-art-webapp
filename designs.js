@@ -5,15 +5,16 @@
 
 $(function () {
     // sets the grid
-    $("#sizePicker").on("submit", function (event) {
-        // removeGrid(); // start fresh
+    const sizePicker = document.getElementById('sizePicker');
+    sizePicker.addEventListener("submit", function (event) {
         whileRemoveGrid(); // start fresh with a while loop
         makeGrid(); // draw new grid based on user input
-        setColor(); // sets the color of grid cell based on behavior
+        setColor(); // sets the color of grid cell based on behavior 
         event.preventDefault();
         document.getElementById("save").style.visibility = "visible";
         document.getElementById("share").style.visibility = "visible";
     });
+
 
     $("#save").on("click", function (event) {
         savePixelArt();

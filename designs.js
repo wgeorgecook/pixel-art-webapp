@@ -15,10 +15,11 @@ $(function () {
         document.getElementById("share").style.visibility = "visible";
     });
 
-
-    $("#save").on("click", function (event) {
+    const save = document.getElementById;
+    save.addEventListener("click", function() {
         savePixelArt();
     });
+
 
     $("#share").on("click", function (event) {
         openGraphShare();

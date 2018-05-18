@@ -30,10 +30,10 @@ $(function () {
 function makeGrid() {
 
     // variables set the values equal to the user input
-    var width, height, table;
-    table = $("table");
-    width = $("#sizePicker input#inputWeight").val();
-    height = $("#sizePicker input#inputHeight").val();
+    
+    const table = document.querySelector("table");
+    const width = document.getElementById("inputWeight").value;
+    const height = document.getElementById("inputHeight").value;
 
 
     //debugging
@@ -41,13 +41,14 @@ function makeGrid() {
 
     // set rows
     for (c = 0; c < height; c++) {
-        table.append("<tr/>");
+        table.insertAdjacentHTML('afterbegin', "<tr></tr>");
         //set columns
-    }; for (r = 0; r < width; r++) {
-        $("tr").append("<td/>");
+        for (r = 0; r < width; r++) {
+            const tr = document.querySelector("tr");
+            tr.insertAdjacentHTML('afterbegin', "<td></td>");
         
+        };
     };
-    
 };
 
 function removeGrid() {
